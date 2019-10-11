@@ -25,10 +25,6 @@ ArffLexer::~ArffLexer() {
     }
 }
 
-bool ArffLexer::_is_space(char c) const {
-    return ((c == SPACE) || (c == TAB) || m_scanner->is_newline(c));
-}
-
 bool ArffLexer::_is_comment(char c) const {
     return (c == COMMENT);
 }
@@ -78,7 +74,7 @@ bool ArffLexer::_skip_comments() {
 }
 
 void ArffLexer::_skip_spaces() {
-    while(_is_space(m_scanner->current())) {
+    while(std::isspace(m_scanner->current())) {
         m_scanner->next();
     }
     return;
@@ -184,7 +180,7 @@ std::string ArffLexer::_read_str() {
         } while(!_is_d_quote(c));
     }
     else {
-        while(!_is_space(c) && !_is_comma(c)) {
+        while(!std::isspace(c) && !_is_comma(c)) {
             if(c < 0) {
                 break;
             }
