@@ -3,9 +3,6 @@
 
 const char ArffScanner::NEWLINE = '\n';
 
-const char ArffScanner::CARRIAGERETURN = '\r';
-
-
 ArffScanner::ArffScanner(const std::string& _file): m_file(_file),
                                             m_line((int64)0),
                                             m_col((int64)0),
@@ -29,10 +26,6 @@ bool ArffScanner::is_newline(char c) const {
     return (c == NEWLINE);
 }
 
-bool ArffScanner::is_carriage_return(char c) const {
-  return (c == CARRIAGERETURN);
-}
-
 char ArffScanner::next() {
     if(eof()) {
         return (char)-1;
@@ -45,13 +38,6 @@ char ArffScanner::next() {
     m_prev_char = m_char;
     if(fread(&m_char, sizeof(m_char), 1, m_fp) != sizeof(m_char)) {
         m_char = (char)-1;  // you would have reached end-of-file?
-    }
-
-    // Deal with the case where the arff file is in Windows OS.
-    // Windows OS uses CRLF (\r\n) to represent newline.
-    // Unix, Mac OS X (and after), use LF (\n) to represent newline.
-    if (is_carriage_return(m_char)) {
-        return next();
     }
     return m_char;
 }
