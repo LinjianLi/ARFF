@@ -9,9 +9,9 @@
 #include <vector>
 #include <map>
 
-#include <arff_utils.h>
-#include <arff_instance.h>
-#include <arff_attr.h>
+#include "arff_utils.h"
+#include "arff_instance.h"
+#include "arff_attr.h"
 
 
 /** nominal values */

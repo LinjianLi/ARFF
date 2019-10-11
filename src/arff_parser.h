@@ -7,8 +7,8 @@
 
 #include <string>
 
-#include <arff_lexer.h>
-#include <arff_data.h>
+#include "arff_lexer.h"
+#include "arff_data.h"
 
 
 /**
