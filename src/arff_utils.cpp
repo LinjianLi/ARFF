@@ -19,12 +19,6 @@ void throw_ex(const char* file, int64 line, const char* fmt, ...) {
 }
 #undef STR_LENGTH
 
-char to_lower(char c) {
-    if((c >= 'A') && (c <= 'Z')) {
-        return ((c - 'A') + 'a');
-    }
-    return c;
-}
 
 bool icompare(const std::string& str, const std::string& ref) {
     size_t s1 = str.size();
@@ -35,7 +29,7 @@ bool icompare(const std::string& str, const std::string& ref) {
     const char* ch1 = str.c_str();
     const char* ch2 = ref.c_str();
     for(size_t i=0;i<s1;++i) {
-        if(to_lower(ch1[i]) != to_lower(ch2[i])) {
+        if(std::tolower(ch1[i]) != std::tolower(ch2[i])) {
             return false;
         }
     }

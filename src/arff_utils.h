@@ -47,13 +47,6 @@ void str2num(const std::string& str, T& num) {
 }
 
 
-/**
- * @brief Convert the input character to lower case
- * @param c input character
- * @return lowercase version of the input character
- */
-char to_lower(char c);
-
 
 /**
  * @brief Performs a case-insensitive match against the 2 strings
