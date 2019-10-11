@@ -82,9 +82,19 @@ public:
      */
     bool is_newline(char c) const;
 
+    /**
+     * @brief Checks whether the given character is carriage return or not
+     * @param c the character
+     * @return true if the character is carriage return, else false
+     */
+    bool is_carriage_return(char c) const;
+
 
     /** new-line character */
     static const char NEWLINE;
+
+    /** carriage-return character */
+    static const char CARRIAGERETURN;
 
 
 private:
