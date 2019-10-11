@@ -12,7 +12,7 @@ void throw_ex(const char* file, int64 line, const char* fmt, ...) {
     vsprintf(msg, fmt, va);
     va_end(va);
     std::string err(file);
-    err += ":" + num2str<int64>(line) + " -- ";
+    err += ":" + std::to_string(line) + " -- ";
     err += msg;
     std::runtime_error ex(err);
     throw ex;

@@ -77,7 +77,7 @@ bool ArffScanner::eof() const {
 }
 
 std::string ArffScanner::err_msg(const std::string& msg) const {
-    std::string err = m_file + ":" + num2str<int64>(m_line);
-    err += ":" + num2str<int64>(m_col) + " " + msg;
+    std::string err = m_file + ":" + std::to_string(m_line);
+    err += ":" + std::to_string(m_col) + " " + msg;
     return err;
 }

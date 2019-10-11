@@ -123,9 +123,9 @@ ArffValue::operator float() const {
 ArffValue::operator std::string() const {
     switch(m_type) {
     case INTEGER:
-        return num2str<int32>(m_int);
+        return std::to_string(m_int);
     case FLOAT:
-        return num2str<float>(m_float);
+        return std::to_string(m_float);
     case DATE:
     case STRING:
         return m_str;

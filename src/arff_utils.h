@@ -32,21 +32,6 @@ void throw_ex(const char* file, int64 line, const char* fmt, ...);
 
 
 /**
- * @brief Converts a number to string
- * @param num the number to be converted
- * @return the desired string
- */
-template <typename T>
-std::string num2str(T num) {
-    std::string str;
-    std::ostringstream oss;
-    oss << num;
-    str = oss.str();
-    return str;
-}
-
-
-/**
  * @brief Converts a string to number
  * @param str the string to be converted
  * @param num the desired number
