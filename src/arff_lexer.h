@@ -85,6 +85,13 @@ private:
     void _skip_spaces();
 
     /**
+     * @brief Checks whether the input character is a whitespace or not
+     * @param c character or interest
+     * @return true if it is a whitespace, else false
+     */
+    bool _is_space(char c) const;
+
+    /**
      * @brief Checks whether the input character is a comment or not
      * @param c character or interest
      * @return true if it is a comment, else false
